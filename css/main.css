@@ -1,0 +1,520 @@
+@import url(normalize.css);
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+
+:root {
+  --gap: 12px;
+  --border-radius: 4px;
+  --base-margin-value: 4px;
+  --base-white-color: #ffffff;
+  --base-font-color: #22244;
+}
+
+html {
+  --base-padding-vertical: 8px;
+  --base-padding-horizontal: 16px;
+  color: #222;
+  font-size: 1em;
+  font-family: "Open Sans", serif;
+  line-height: 1.4;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1:not([slot]) {
+  font-size: 48px;
+}
+
+h2:not([slot]) {
+  font-size: 36px;
+}
+
+h3:not([slot]) {
+  font-size: 28px;
+}
+
+h4:not([slot]) {
+  font-size: 20px;
+}
+
+h5:not([slot]) {
+  font-size: 18px;
+}
+
+h6:not([slot]) {
+  font-size: 16px;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+*[data-centered-item] {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+*[data-centered-grid-item] {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+*[data-flex-column] {
+  display: flex;
+  flex-direction: column;
+}
+
+*[data-flex-row] {
+  display: flex;
+  flex-direction: row;
+}
+
+*[data-start-left] {
+  justify-items: flex-start;
+}
+
+*[data-full-width] {
+  max-width: 100%;
+  width: 100%
+}
+
+*[data-default-gap] {
+  gap: var(--gap);
+}
+
+*[data-min-gap] {
+  gap: 4px;
+}
+
+*[data-gap] {
+  gap: var(--gap);
+}
+
+*[data-gap="2"] {
+  gap: calc(var(--gap) * 2);
+}
+
+*[data-gap="3"] {
+  gap: calc(var(--gap) * 3);
+}
+
+*[data-gap="4"] {
+  gap: calc(var(--gap) * 4);
+}
+
+*[data-no-empty] {
+  display: none;
+  visibility: hidden;
+}
+
+*[data-wrap] {
+  flex-wrap: wrap;
+}
+
+*[data-base-padding-applied__horizontal] {
+  padding-left: var(--base-padding-horizontal);
+  padding-right: var(--base-padding-horizontal);
+}
+
+*[data-base-padding-applied__vertical] {
+  padding-top: var(--base-padding-vertical);
+  padding-bottom: var(--base-padding-vertical);
+}
+
+img[data-centered-image], video[data-centered-video] {
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.text-content-item {
+  font-size: 14px;
+  margin: 0
+}
+
+h4.text-content-item {
+  margin: 0;
+  font-size: 16px;
+}
+
+.text-content-item > b, .text-content-item > strong {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+div.container {
+  --base-container-padding-horizontal-value: 16px;
+  --base-container-padding-vertical-value: 8px;
+  --base-container-border-radius: 4px;
+  margin-left: calc(var(--base-margin-value) * 4);
+  margin-right: calc(var(--base-margin-value) * 4);
+  border-radius: var(--base-container-border-radius);
+  padding: var(--base-container-padding-vertical-value) var(--base-container-padding-horizontal-value);
+  background-image: url(../img/moroccan-flower.png);
+  background-position: center center;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.container button:not(.slotted-button), #add_item:not(.slotted-button) {
+  padding: 9px 20px;
+  background-color: #444444;
+  color: var(--base-white-color);
+  border-radius: calc(var(--border-radius) * 2);
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+div.container button:not(.slotted-button):hover, #add_item:not(.slotted-button):hover {
+  cursor: pointer;
+}
+
+form.styled-form input {
+  --input-border: #d3d3d3;
+  --input-placeholder-color: #A9A9A9F8;
+  --input-border-radius: 4px;
+  --input-valid-color: #94BEAE;
+  --input-invalid-color: #E56262D3;
+  padding: 10px;
+  border-radius: var(--input-border-radius);
+  outline: none;
+  border: 1px solid var(--input-border);
+  color: var(--base-font-color);
+}
+
+form.styled-form button, .submit-container button {
+  --button-vertical-padding: 9px;
+  --button-horizontal-padding: 20px;
+  --hover-green-color: #94BEAE;
+  --button-color: #57806E;
+  cursor: pointer;
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
+  background-color: transparent;
+  border: 1px solid var(--button-color);
+  outline: none;
+  border-radius: var(--border-radius);
+  color: var(--base-font-color);
+  white-space: break-spaces;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 248px;
+  width: 100%;
+  transition: all 300ms ease-in;
+}
+
+.submit-container button {
+  background-color: var(--button-color);
+  color: var(--base-white-color);
+}
+
+.submit-container button:disabled {
+  opacity: .8;
+  pointer-events: none;
+}
+
+.submit-container button:hover {
+  cursor: pointer;
+  background-color: var(--hover-green-color);
+  border-color: var(--hover-green-color);
+}
+
+form.styled-form button:hover {
+  cursor: pointer;
+  color: var(--hover-green-color);
+  border-color: var(--hover-green-color);
+}
+
+#upload-file-form, #upload-file-form *, #upload-file-form button, #upload-file-form > * {
+  visibility: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+.submit-container {
+  margin-top: 20px;
+}
+
+form.styled-form input:invalid {
+  border-color: var(--input-invalid-color);
+}
+
+form.styled-form input:invalid:required {
+  border-width: 2px;
+}
+
+form.styled-form input:valid {
+  border-color: var(--input-valid-color);
+}
+
+form.styled-form input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+#newsletters {
+  gap: var(--gap);
+}
